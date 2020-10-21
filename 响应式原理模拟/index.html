@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>mini vue2</title>
+	</head>
+	<body>
+		<div id="app">
+			<h4>测试：差值表达式</h4>
+			<p>{{msg}}</p>
+			<h4>测试：v-text（将元素当成纯文本输出）</h4>
+			<p v-text="msg"></p>
+			<h4>测试：v-model 绑定 msg</h4>
+			<input type="text" v-model="msg" />
+			<input type="text" v-model="count" />
+		</div>
+	</body>
+	
+	<script src="./js/dep.js"></script>
+	<script src="./js/watcher.js"></script>
+	<script src="js/compiler.js"></script>
+	<script src="./js/observer.js"></script>
+	<script src="./js/vue.js"></script>
+	<script>
+		var vm = new Vue({
+			el: "#app",
+			data: {
+				msg: "hello",
+				name: "dingding",
+				count: 100,
+			}
+		}) 
+		console.log("vm:", vm)
+		
+	</script>
+</html>
