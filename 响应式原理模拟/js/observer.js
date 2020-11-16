@@ -28,13 +28,11 @@ class Observer {
 			configurable: true,
 			get() {
 				// 收集依赖
-				console.log(888, Dep.target)
 				Dep.target && dep.addSubs(Dep.target);
 				// return data[key];  
 				return val;
 			},
 			set(newVal) {
-				console.log(112, newVal, val)
 				if(newVal === val) {
 					return;
 				}

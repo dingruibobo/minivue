@@ -6,7 +6,6 @@ class Dep {
 	
 	// 添加观察者
 	addSubs(sub) {
-		console.log(666, sub)
 		if(sub && sub.update) {
 			this.subs.push(sub);
 		}
@@ -14,7 +13,6 @@ class Dep {
 	
 	// 通知观察者
 	notify() {
-		console.log(111, this.subs)
 		this.subs.forEach(sub => {
 			sub.update()
 		})

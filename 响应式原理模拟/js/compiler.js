@@ -7,10 +7,11 @@ class Compiler {
   }
   // 编译模板，处理文本节点和元素节点
   compile (el) {
+	console.log("el:", el)
     let childNodes = el.childNodes
     Array.from(childNodes).forEach(node => {
-      // 处理文本节点
       if (this.isTextNode(node)) {
+		// 处理文本节点
         this.compileText(node)
       } else if (this.isElementNode(node)) {
         // 处理元素节点
@@ -25,11 +26,13 @@ class Compiler {
   }
   // 编译元素节点，处理指令
   compileElement (node) {
-    // console.log(node.attributes)
+    console.log(8989 , node.attributes)
     // 遍历所有的属性节点
     Array.from(node.attributes).forEach(attr => {
+		console.log(7878, attr)
       // 判断是否是指令
       let attrName = attr.name
+	  console.log(2323, attr.name, attr.value)
       if (this.isDirective(attrName)) {
         // v-text --> text
         attrName = attrName.substr(2)
